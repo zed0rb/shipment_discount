@@ -15,6 +15,19 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * Command to calculate discounts for transactions based on the rules.
+ *
+ * Design Decisions:
+ * - Reads transactions from a file and applies multiple rules sequentially.
+ * - Outputs the final price and discount for each transaction.
+ * - Handles file input errors and invalid lines gracefully.
+ *
+ * Assumptions:
+ * - Transactions are provided in a file with each line in the format: 'YYYY-MM-DD SIZE PROVIDER'.
+ * - Only valid transactions with correct formats and providers will be processed.
+ */
+
 #[AsCommand(
     name: 'app:calculate-discounts',
     description: 'Calculates transactions discounts from a file'
