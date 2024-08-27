@@ -1,0 +1,15 @@
+1. Rule LowestPriceRule update
+    -Line 30 has been updated to dynamically calculate the lowest price for 'S' packages by iterating through the array
+    of available providers, rather than hardcoding each provider individually.
+
+2. RuleInterface update
+   -Rules have to return Transaction obj. instead of void
+
+3. FreeThirdLargeLPTransactionRuleTest update
+   -Added test to check if discount is not applied for first LP L package
+   -Refactored Hard-Coded Discount Price: The hard-coded discount price for the third large LP shipment has
+   been replaced with a reference to the price defined in Constants
+
+4. Transaction update
+    -Updated the Transaction class to enhance encapsulation by changing the visibility of properties from
+     public to private. Introduced getters and setters for these properties.
