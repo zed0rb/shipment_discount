@@ -13,3 +13,6 @@
 4. Transaction update
     -Updated the Transaction class to enhance encapsulation by changing the visibility of properties from
      public to private. Introduced getters and setters for these properties.
+
+5. MonthlyDiscountLimitRule update
+    -Line 40 has been updated for better readability

@@ -37,7 +37,8 @@ class MonthlyDiscountLimitRule implements RuleInterface
 
         if ($potentialDiscount > $availableDiscount) {
             $transaction->setDiscount($availableDiscount);
-            $transaction->setPrice($transaction->getPrice() + ($potentialDiscount - $availableDiscount));
+            $finalPrice = $transaction->getPrice() + ($potentialDiscount - $availableDiscount);
+            $transaction->setPrice($finalPrice);
         }
 
         $context['monthly_discounts'][$monthKey] += $transaction->getDiscount();
